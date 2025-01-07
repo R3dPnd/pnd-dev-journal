@@ -1,0 +1,32 @@
+// Global styles for the application
+
+/*
+* Global reset to remove the 
+*/
+* {
+    max-width: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*
+* Body styles including font settings for general inheritance
+*/
+body {
+    font-family: 'Silkscreen', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/*
+* Pixel art fonts
+*/
+@font-face {
+    font-family: 'Silkscreen';
+    src: local('MyFont'), url(../../public/fonts/Silkscreen-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'SilkscreenBold';
+    src: local('MyFont'), url(../../public/fonts/Silkscreen-Bold.ttf) format('truetype');
+}
