@@ -1,9 +1,15 @@
 import "./header.scss";
 
-export default function Header() {
+interface Props {
+    children: any;
+}
+export default function Header({children}: Props) {
     return (
         <header className="pnd-header">
-            <h1>Dev Journal</h1>
+            <h1 className="pnd-title">Dev Journal</h1>
+            {
+                children
+            }
         </header>
     );
 }

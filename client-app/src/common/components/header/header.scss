@@ -1,3 +1,9 @@
 .pnd-header {
     width: 100%;
+    display: flex;
+    position: fixed;
+}
+
+.pnd-title {
+    width: fit-content;
 }

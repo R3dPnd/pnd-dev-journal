@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+#root {
+  // Scss variables which we gonna assign using
+  // useState and JavaScript in reactJS
+  $background-color: #fff;
+  $text-color: #262833;
+  $primary-color: red;
+  $secondary-color: blue;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-rows: auto;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

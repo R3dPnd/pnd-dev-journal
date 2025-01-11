@@ -3,15 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { setToLS } from './common/services/local-storage-service';
-import * as themes from './styles/themes/themes.json';
-
-const Index = () => {
-  setToLS('all-themes', themes.data.light);
-  return(
-    <App />
-  )
-}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
