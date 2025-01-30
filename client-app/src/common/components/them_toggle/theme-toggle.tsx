@@ -8,8 +8,6 @@ interface Props {
 }
 export default function ThemeToggle({LightTheme, DarkTheme}:Props){
       const [darkTheme, setDarkTheme] = useState(true);
-    
-
       
       function setTheme(theme: Theme): void{
         const root = document.documentElement;

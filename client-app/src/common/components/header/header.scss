@@ -1,9 +1,29 @@
 .pnd-header {
     width: 100%;
+    margin: 0;
     display: flex;
     position: fixed;
+    height: fit-content;
+    background-size: cover;
+    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
 
-.pnd-title {
+.pnd-title-container {
+    width: 100%;;
+}
+
+.pnd-title{
     width: fit-content;
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.pnd-sub-title {
+    width: fit-content;
+    display: block;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 15px;
 }

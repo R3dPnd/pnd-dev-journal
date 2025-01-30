@@ -10,7 +10,7 @@ export const LightTheme: Theme = {
     backgroundColor: "ffff",
     fontColor: "black",
     primaryColor: "blue",
-    secondaryColor: "",
+    secondaryColor: "red",
     ternaryColor: ""
 }
 
@@ -18,6 +18,6 @@ export const DarkTheme: Theme = {
     backgroundColor: "black",
     fontColor: "white",
     primaryColor: "red",
-    secondaryColor: "",
+    secondaryColor: "blue",
     ternaryColor: ""
 }

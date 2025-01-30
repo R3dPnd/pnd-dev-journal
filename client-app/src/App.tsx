@@ -1,9 +1,7 @@
 import './App.scss';
 import { getMarkdown } from './common/services/mark-down-service';
 import Header from './common/components/header/header';
-import { useEffect, useState } from 'react';
-import Button from './common/components/button/button';
-import { DarkTheme, LightTheme, Theme } from './constants/colors';
+import { DarkTheme, LightTheme } from './constants/colors';
 import ThemeToggle from './common/components/them_toggle/theme-toggle';
 
 function App() {
@@ -19,8 +17,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header>
-      <ThemeToggle DarkTheme={DarkTheme} LightTheme={LightTheme}/>
+      <Header Title='Dev Journal' SubTitle='Preston Harms'>
+        <ThemeToggle DarkTheme={DarkTheme} LightTheme={LightTheme}/>
       </Header>
     </div>
   );
