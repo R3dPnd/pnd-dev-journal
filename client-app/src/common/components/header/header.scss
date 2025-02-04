@@ -1,19 +1,22 @@
 .pnd-header {
     width: 100%;
+    height: fit-content;
     margin: 0;
     display: flex;
     position: fixed;
-    height: fit-content;
     background-size: cover;
     background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
 
 .pnd-title-container {
-    width: 100%;;
+    width: 100%;
+    position: absolute;
+    display: block;align-items: center;
 }
 
 .pnd-title{
     width: fit-content;
+    height: fit-content;
     display: block;
     font-size: 60px;
     font-weight: 400;
