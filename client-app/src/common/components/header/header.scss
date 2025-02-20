@@ -10,8 +10,8 @@
 
 .pnd-title-container {
     width: 100%;
-    position: absolute;
-    display: block;align-items: center;
+    display: block;
+    align-items: center;
 }
 
 .pnd-title{
@@ -29,4 +29,8 @@
     font-size: 40px;
     font-weight: 400;
     letter-spacing: 15px;
+}
+
+.pnd-logo {
+    width: fit-content;
 }

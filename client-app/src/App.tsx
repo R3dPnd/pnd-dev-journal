@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header Title='Dev Journal' SubTitle='Preston Harms'>
+      <Header Title='Dev Journal' SubTitle='Preston Harms' IconPath='img/rd_pnd_2025_rd_128.png'>
         <ThemeToggle DarkTheme={DarkTheme} LightTheme={LightTheme}/>
       </Header>
     </div>

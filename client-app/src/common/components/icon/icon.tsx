@@ -1,6 +1,5 @@
 import "./icon.scss"
 
-
 interface Props{
     IconPath: string
 }

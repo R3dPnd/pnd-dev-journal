@@ -5,11 +5,17 @@ interface Props {
     children: any;
     Title: string;
     SubTitle?: string;
+    IconPath?: string;
 }
-export default function Header({children, Title: Header, SubTitle: SubHeader}: Props) {
+export default function Header({children, Title: Header, SubTitle: SubHeader, IconPath}: Props) {
+    console.log(IconPath)
     return (
         <header className="pnd-header">
-            <Icon IconPath="./img/bg-rd-pnd.png"/>
+            <div className="pnd-logo">
+                { IconPath != undefined ? (
+                    <Icon IconPath={IconPath}/>
+                ):(<></>)}
+            </div>
             <div className="pnd-title-container">
             <h1 className="pnd-title">
                 <span className="pnd-title">{Header}</span>
