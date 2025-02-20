@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Theme } from "../../../constants/colors";
-import Button from "../button/button";
+import Toggle from "../toggle/toggle";
 
 interface Props {
     DarkTheme: Theme;
@@ -37,14 +37,15 @@ export default function ThemeToggle({LightTheme, DarkTheme}:Props){
             setTheme(theme);
           }, [darkTheme]);
     return (
-      <Button
-        onClick={() =>
-          setDarkTheme(!darkTheme)
-        }
-      >
-        {darkTheme
-          ? "Switch to Light"
-          : "Switch to Dark"}
-      </Button>
+      // <Button
+      //   onClick={() =>
+      //     setDarkTheme(!darkTheme)
+      //   }
+      // >
+      //   {darkTheme
+      //     ? "Switch to Light"
+      //     : "Switch to Dark"}
+      // </Button>
+      <Toggle></Toggle>
     )
 }

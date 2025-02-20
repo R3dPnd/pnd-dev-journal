@@ -22,7 +22,7 @@ export default function Header({children, Title: Header, SubTitle: SubHeader, Ic
                 <span className="pnd-sub-title">{SubHeader}</span>
             </h1>
             </div>
-            <span className="pnd-children">
+            <span className="pnd-header-btns">
             {
                 children
             }
