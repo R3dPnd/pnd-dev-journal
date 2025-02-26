@@ -2,13 +2,20 @@ import "./toggle.scss";
 
 interface Props {
     label?: string;
+    onClick?: () => void
 }
 
-export default function Toggle({label}: Props){
+export default function Toggle({ label, onClick }: Props) {
     return (
-        <label className="switch">
-            <input type="checkbox"/>
-            <span className="slider round"></span>
-        </label>
+        <span className="pnd-switch-containter">
+            <div className="pnd-switch-label">
+                {label}
+            </div>
+            <label className="switch">
+                <input type="checkbox" onClick={onClick} />
+                <span className="slider round"></span>
+            </label>
+        </span>
+
     )
 }

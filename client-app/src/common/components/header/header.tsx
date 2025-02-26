@@ -18,7 +18,7 @@ export default function Header({children, Title: Header, SubTitle: SubHeader, Ic
             </div>
             <div className="pnd-title-container">
             <h1 className="pnd-title">
-                <span className="pnd-title">{Header}</span>
+                <span className="pnd-main-title">{Header}</span>
                 <span className="pnd-sub-title">{SubHeader}</span>
             </h1>
             </div>

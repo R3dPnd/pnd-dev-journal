@@ -1,3 +1,5 @@
+@import "../../../styles/animations";
+
 .pnd-header {
     width: 100%;
     height: fit-content;
@@ -18,9 +20,10 @@
     width: fit-content;
     height: fit-content;
     display: block;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 400;
     letter-spacing: 35px;
+    animation: moveInLeft 5s;
 }
 
 .pnd-header-btns {
@@ -30,7 +33,7 @@
 .pnd-sub-title {
     width: 100%;
     display: block;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 400;
     letter-spacing: 15px;
 }
@@ -38,3 +41,4 @@
 .pnd-logo {
     width: 25%;
 }
+

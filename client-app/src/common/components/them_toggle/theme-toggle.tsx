@@ -6,8 +6,24 @@ interface Props {
     DarkTheme: Theme;
     LightTheme: Theme;
 }
+
+const LIGHT_THEME_LABEL = "Toggle Dark Theme"
+const DARK_THEME_LABEL = "Toggle Light Theme"
+
 export default function ThemeToggle({LightTheme, DarkTheme}:Props){
       const [darkTheme, setDarkTheme] = useState(true);
+      const [label, setLabel] = useState(DARK_THEME_LABEL)
+
+      const ontoggle: any =  () => {
+        if(darkTheme){
+          setDarkTheme(false)
+          setLabel(LIGHT_THEME_LABEL)
+        }
+        else{
+          setDarkTheme(true)
+          setLabel(DARK_THEME_LABEL)
+        }
+      }
       
       function setTheme(theme: Theme): void{
         const root = document.documentElement;
@@ -46,6 +62,6 @@ export default function ThemeToggle({LightTheme, DarkTheme}:Props){
       //     ? "Switch to Light"
       //     : "Switch to Dark"}
       // </Button>
-      <Toggle></Toggle>
+      <Toggle label={label} onClick={ontoggle}></Toggle>
     )
 }

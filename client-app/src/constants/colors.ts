@@ -7,17 +7,18 @@ export interface Theme {
 }
 
 export const LightTheme: Theme = {
-    backgroundColor: "ffff",
+    backgroundColor: "#1956F0",
     fontColor: "black",
-    primaryColor: "blue",
-    secondaryColor: "red",
+    primaryColor: "#0F4CE6",
+    secondaryColor: "#1956F0",
     ternaryColor: ""
+    
 }
 
 export const DarkTheme: Theme = {
-    backgroundColor: "black",
+    backgroundColor: "#062060",
     fontColor: "white",
-    primaryColor: "red",
-    secondaryColor: "blue",
+    primaryColor: "#051A4D",
+    secondaryColor: "#062060",
     ternaryColor: ""
 }
