@@ -1,12 +1,12 @@
 import "./button.scss";
 
 interface Props{
-    onClick: () => void;
+    onClick?: () => void;
     label?: string;
-    children: any;
+    children?: any;
 }
 
-export default function Button({onClick, label, children}: Props){
+export default function PndButton({onClick, label, children}: Props){
     return (
         <button className="pnd-button" onClick={onClick}>
             {label}

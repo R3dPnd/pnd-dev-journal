@@ -1,5 +1,23 @@
 .pnd-button{
     min-width:5rem;
+    width: fit-content;
+    height: fit-content;
     background-color: var(--secondary-color);
     color: var(--text-color);
+}
+
+// link is a special case state of a link
+// visited is the state of a link that has been visited
+.pnd-button:link,
+.pnd-button:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    // top, bottom, left, right
+    padding: 15px 40px;
+    display: inline-block;
+}
+
+.pnd-button-white {
+    background-color: #fff;
+    color: #777;
 }

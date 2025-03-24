@@ -1,8 +1,10 @@
 import './App.scss';
 import { getMarkdown } from './common/services/mark-down-service';
-import Header from './common/components/header/header';
+import PndHeader from './common/components/header/header';
 import { DarkTheme, LightTheme } from './constants/colors';
-import ThemeToggle from './common/components/them_toggle/theme-toggle';
+import PndThemeToggle from './common/components/them_toggle/theme-toggle';
+import PndLeftNav from './componenets/left-nav/left-nav';
+import PndButton from './common/components/button/button';
 
 function App() {
 
@@ -17,9 +19,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header Title='Dev Journal' SubTitle='Preston Harms' IconPath='img/rd_pnd_2025_rd_128.png'>
-        <ThemeToggle DarkTheme={DarkTheme} LightTheme={LightTheme}/>
-      </Header>
+      <PndHeader Title='Dev Journal' SubTitle='Preston Harms' IconPath='img/rd_pnd_2025_rd_128.png'>
+        <PndThemeToggle DarkTheme={DarkTheme} LightTheme={LightTheme}/>
+      </PndHeader>
+        <PndLeftNav>
+          <PndButton label="Home" onClick={()=> console.log("Game Over")}/>
+      </PndLeftNav>
     </div>
   );
 }

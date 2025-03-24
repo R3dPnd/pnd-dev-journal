@@ -2,10 +2,9 @@
 
 .pnd-header {
     width: 100%;
-    height: fit-content;
+    height: 10vh;
     margin: 0;
     display: flex;
-    position: fixed;
     background-size: cover;
     background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
@@ -19,11 +18,18 @@
 .pnd-title{
     width: fit-content;
     height: fit-content;
-    display: block;
-    font-size: 50px;
+    font-size: 50;
     font-weight: 400;
     letter-spacing: 35px;
-    animation: moveInLeft 5s;
+}
+
+.pnd-main-title {
+    animation: moveInLeft 1s ease-out;
+        backface-visibility: hidden;
+}
+.pnd-sub-title {
+    animation: moveInLeft 1s ease-out;
+    backface-visibility: hidden;
 }
 
 .pnd-header-btns {

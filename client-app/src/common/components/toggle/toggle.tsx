@@ -5,7 +5,7 @@ interface Props {
     onClick?: () => void
 }
 
-export default function Toggle({ label, onClick }: Props) {
+export default function PndToggle({ label, onClick }: Props) {
     return (
         <span className="pnd-switch-containter">
             <div className="pnd-switch-label">
@@ -16,6 +16,5 @@ export default function Toggle({ label, onClick }: Props) {
                 <span className="slider round"></span>
             </label>
         </span>
-
     )
 }

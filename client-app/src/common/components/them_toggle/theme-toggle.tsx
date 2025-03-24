@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Theme } from "../../../constants/colors";
-import Toggle from "../toggle/toggle";
+import PndToggle from "../toggle/toggle";
 
 interface Props {
     DarkTheme: Theme;
@@ -10,8 +10,9 @@ interface Props {
 const LIGHT_THEME_LABEL = "Toggle Dark Theme"
 const DARK_THEME_LABEL = "Toggle Light Theme"
 
-export default function ThemeToggle({LightTheme, DarkTheme}:Props){
-      const [darkTheme, setDarkTheme] = useState(true);
+export default function PndThemeToggle({LightTheme, DarkTheme}:Props){
+      const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+      const [darkTheme, setDarkTheme] = useState(darkThemeMq.matches);
       const [label, setLabel] = useState(DARK_THEME_LABEL)
 
       const ontoggle: any =  () => {
@@ -62,6 +63,6 @@ export default function ThemeToggle({LightTheme, DarkTheme}:Props){
       //     ? "Switch to Light"
       //     : "Switch to Dark"}
       // </Button>
-      <Toggle label={label} onClick={ontoggle}></Toggle>
+      <PndToggle label={label} onClick={ontoggle}></PndToggle>
     )
 }

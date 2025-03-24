@@ -1,4 +1,4 @@
-import Icon from "../icon/icon";
+import PndIcon from "../icon/icon";
 import "./header.scss";
 
 interface Props {
@@ -7,13 +7,13 @@ interface Props {
     SubTitle?: string;
     IconPath?: string;
 }
-export default function Header({children, Title: Header, SubTitle: SubHeader, IconPath}: Props) {
+export default function PndHeader({children, Title: Header, SubTitle: SubHeader, IconPath}: Props) {
     console.log(IconPath)
     return (
         <header className="pnd-header">
             <div className="pnd-logo">
                 { IconPath != undefined ? (
-                    <Icon IconPath={IconPath}/>
+                    <PndIcon IconPath={IconPath}/>
                 ):(<></>)}
             </div>
             <div className="pnd-title-container">
