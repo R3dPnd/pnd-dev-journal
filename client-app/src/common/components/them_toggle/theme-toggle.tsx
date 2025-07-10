@@ -54,15 +54,6 @@ export default function PndThemeToggle({LightTheme, DarkTheme}:Props){
             setTheme(theme);
           }, [darkTheme]);
     return (
-      // <Button
-      //   onClick={() =>
-      //     setDarkTheme(!darkTheme)
-      //   }
-      // >
-      //   {darkTheme
-      //     ? "Switch to Light"
-      //     : "Switch to Dark"}
-      // </Button>
       <PndToggle label={label} onClick={ontoggle}></PndToggle>
     )
 }

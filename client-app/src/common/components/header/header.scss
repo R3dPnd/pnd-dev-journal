@@ -1,4 +1,4 @@
-@import "../../../styles/animations";
+@import "../../../sass/base/animations";
 
 .pnd-header {
     width: 100%;
@@ -10,7 +10,7 @@
 }
 
 .pnd-title-container {
-    width: 50%;
+    width: 65%;
     display: block;
     align-items: center;
 }
@@ -20,20 +20,12 @@
     height: fit-content;
     font-size: 50;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 25px;
 }
 
 .pnd-main-title {
     animation: moveInLeft 1s ease-out;
         backface-visibility: hidden;
-}
-.pnd-sub-title {
-    animation: moveInLeft 1s ease-out;
-    backface-visibility: hidden;
-}
-
-.pnd-header-btns {
-    width: 25%;
 }
 
 .pnd-sub-title {
@@ -42,9 +34,42 @@
     font-size: 30px;
     font-weight: 400;
     letter-spacing: 15px;
+    animation: moveInLeft 1s ease-out;
+    backface-visibility: hidden;
+}
+
+.pnd-header-btns {
+    width: 20%;
 }
 
 .pnd-logo {
-    width: 25%;
+    width: 15%;
 }
 
+// Responsive design for tablets
+@media (max-width: 768px) {
+    .pnd-header {
+        height: 15vh;
+    }
+    .pnd-sub-title {
+        font-size: 7px;
+    }
+    .pnd-logo {
+        width: 15%;
+    }
+}
+
+// Responsive design for mobile devices
+@media (max-width: 480px) {
+    .pnd-header {
+        height: 10vh;
+        font-size: 7px;
+
+    }
+    .pnd-sub-title {
+        font-size: 7px;
+    }
+    .pnd-logo {
+        width: 15%;
+    }
+}

@@ -1,4 +1,4 @@
-import PndButton from "../../common/components/button/button";
+import "./left-nav.scss";
 
 interface Props{
     children: any;

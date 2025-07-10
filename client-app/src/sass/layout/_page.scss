@@ -1,0 +1,69 @@
+.page {
+        &__main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+
+        &__sidebar {
+            width: 20%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        &__content {
+            width: 80%;
+            height: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            padding: 3%;
+        }
+        
+    }
+}
+
+// Responsive design for tablets
+@media (max-width: 768px) {
+    .page {
+        &__main {
+            &__sidebar {
+                width: 25%;
+                margin: 5px;
+                padding: 5px;
+            }
+            
+            &__content {
+                width: 75%;
+            }
+        }
+    }
+}
+
+// Responsive design for mobile devices
+@media (max-width: 480px) {
+    .page {
+        &__main {
+            flex-direction: column;
+            padding: 5px;
+            
+            &__content {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+        }
+    }
+}

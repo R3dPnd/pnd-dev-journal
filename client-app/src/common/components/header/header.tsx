@@ -1,3 +1,4 @@
+import { useIsMobile } from "../../../hooks/useMediaQuery";
 import PndIcon from "../icon/icon";
 import "./header.scss";
 
@@ -8,7 +9,8 @@ interface Props {
     IconPath?: string;
 }
 export default function PndHeader({children, Title: Header, SubTitle: SubHeader, IconPath}: Props) {
-    console.log(IconPath)
+    const isMobile = useIsMobile();
+
     return (
         <header className="pnd-header">
             <div className="pnd-logo">
@@ -25,6 +27,9 @@ export default function PndHeader({children, Title: Header, SubTitle: SubHeader,
             <span className="pnd-header-btns">
             {
                 children
+            }
+            {
+                isMobile ? "Hello" : null
             }
             </span>
         </header>

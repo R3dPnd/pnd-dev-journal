@@ -8,7 +8,7 @@ interface Props{
 
 export default function PndButton({onClick, label, children}: Props){
     return (
-        <button className="pnd-button" onClick={onClick}>
+        <button className="pnd-button" onClick={onClick} type="button">
             {label}
             {children}
         </button>

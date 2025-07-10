@@ -1,2 +1,4 @@
-@import "./styles/base";
-@import "./styles/constants";
+@import "./sass/base/base";
+@import "./sass/base/animations";
+@import "./sass/mixins/mixins";
+@import "./sass/layout/page";
