@@ -1,0 +1,89 @@
+// Nav section tabs
+.ep-nav-tabs {
+  display: flex;
+  width: 100%;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.ep-nav-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-color);
+  font-family: 'Silkscreen', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 6px 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.15s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &--active {
+    opacity: 1;
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+}
+
+// Project items in left nav
+.ep-project-item {
+  width: 100%;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__title {
+    color: var(--text-color);
+    font-family: 'Silkscreen', monospace;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &__desc {
+    color: var(--text-color);
+    font-family: 'Silkscreen', monospace;
+    font-size: 10px;
+    opacity: 0.6;
+  }
+
+  &__dann-btn {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-family: 'Silkscreen', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &:hover {
+      background: var(--primary-color);
+      color: var(--background-color);
+
+      .ep-project-item__dann-icon {
+        filter: brightness(0);
+      }
+    }
+  }
+
+  &__dann-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    flex-shrink: 0;
+  }
+}

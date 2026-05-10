@@ -1,0 +1,589 @@
+// Dann of Thursday palette
+$dt-bg: #03122E;
+$dt-bg-panel: #062060;
+$dt-bg-input: #041845;
+$dt-cyan: #2ff3e0;
+$dt-blue: #1956F0;
+$dt-red: #f51720;
+$dt-yellow: #f8d210;
+$dt-green: #28b485;
+$dt-white: #e8eaf6;
+$dt-dim: #3a6fd4;
+$dt-font: 'Silkscreen', monospace;
+
+.dt-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: $dt-bg;
+  color: $dt-cyan;
+  font-family: $dt-font;
+  font-size: 13px;
+  overflow: hidden;
+
+  &--setup {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--error {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// ── Topbar ──────────────────────────────────────────────
+.dt-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $dt-bg-panel;
+  border-bottom: 1px solid $dt-blue;
+  padding: 8px 16px;
+  flex-shrink: 0;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    color: $dt-cyan;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  &__sep {
+    color: $dt-dim;
+  }
+
+  &__project {
+    color: $dt-white;
+    font-weight: bold;
+  }
+
+  &__goal {
+    color: $dt-dim;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 400px;
+    font-size: 11px;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  &__status {
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    &--connected { color: $dt-green; }
+    &--connecting { color: $dt-yellow; }
+    &--disconnected { color: $dt-red; }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__tab {
+    background: transparent;
+    border: 1px solid $dt-dim;
+    color: $dt-dim;
+    font-family: $dt-font;
+    font-size: 11px;
+    padding: 3px 10px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.15s;
+
+    &:hover {
+      border-color: $dt-cyan;
+      color: $dt-cyan;
+    }
+
+    &--active {
+      border-color: $dt-cyan;
+      color: $dt-bg;
+      background: $dt-cyan;
+    }
+  }
+}
+
+.dt-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+// ── Goal Setup ───────────────────────────────────────────
+.dt-goal-setup {
+  width: 600px;
+  max-width: 90vw;
+  border: 1px solid $dt-blue;
+  background: $dt-bg-panel;
+  padding: 40px;
+
+  &__header {
+    margin-bottom: 32px;
+  }
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    margin-bottom: 12px;
+  }
+
+  &__label {
+    color: $dt-cyan;
+    font-size: 18px;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+
+  &__project {
+    color: $dt-white;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  &__dir {
+    color: $dt-dim;
+    font-size: 10px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__prompt {
+    color: $dt-green;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  &__input {
+    background: $dt-bg-input;
+    border: 1px solid $dt-blue;
+    color: $dt-white;
+    font-family: $dt-font;
+    font-size: 12px;
+    padding: 12px;
+    resize: vertical;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: $dt-cyan;
+    }
+
+    &::placeholder {
+      color: $dt-dim;
+    }
+  }
+
+  &__error {
+    color: $dt-red;
+    font-size: 11px;
+  }
+
+  &__btn {
+    background: $dt-blue;
+    border: none;
+    color: $dt-white;
+    font-family: $dt-font;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background 0.15s;
+
+    &:hover:not(:disabled) {
+      background: $dt-cyan;
+      color: $dt-bg;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__info {
+    margin-top: 24px;
+    color: $dt-dim;
+    font-size: 10px;
+    display: flex;
+    gap: 8px;
+  }
+
+  &__info-sep {
+    color: $dt-blue;
+  }
+}
+
+// ── Chat View ────────────────────────────────────────────
+.dt-chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  &__messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar-track { background: $dt-bg; }
+    &::-webkit-scrollbar-thumb { background: $dt-blue; }
+  }
+
+  &__msg {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 85%;
+
+    &--user {
+      align-self: flex-end;
+      align-items: flex-end;
+    }
+
+    &--dann {
+      align-self: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  &__msg-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    .dt-chat__msg--user & { color: $dt-yellow; }
+    .dt-chat__msg--dann & { color: $dt-cyan; }
+  }
+
+  &__msg-content {
+    background: $dt-bg-panel;
+    border: 1px solid $dt-blue;
+    padding: 10px 14px;
+    line-height: 1.6;
+    color: $dt-white;
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    .dt-chat__msg--user & {
+      border-color: $dt-yellow;
+    }
+
+    .dt-chat__msg--dann & {
+      border-color: $dt-cyan;
+    }
+  }
+
+  &__cursor {
+    display: inline-block;
+    width: 8px;
+    height: 13px;
+    background: $dt-cyan;
+    margin-left: 2px;
+    animation: dt-blink 0.8s step-end infinite;
+    vertical-align: text-bottom;
+  }
+
+  &__speak-btn {
+    background: transparent;
+    border: none;
+    color: $dt-dim;
+    font-family: $dt-font;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 2px 0;
+
+    &:hover { color: $dt-cyan; }
+  }
+
+  &__status {
+    color: $dt-yellow;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: dt-pulse 1.5s ease-in-out infinite;
+  }
+
+  &__status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $dt-yellow;
+    margin-right: 6px;
+    animation: dt-pulse 1s ease-in-out infinite;
+  }
+
+  &__improved {
+    font-size: 10px;
+    color: $dt-dim;
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  &__footer {
+    border-top: 1px solid $dt-blue;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  &__tts-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 10px;
+    color: $dt-dim;
+  }
+
+  &__voice-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 300px;
+  }
+
+  &__autospeak {
+    background: transparent;
+    border: 1px solid $dt-dim;
+    color: $dt-dim;
+    font-family: $dt-font;
+    font-size: 10px;
+    padding: 2px 8px;
+    cursor: pointer;
+
+    &--on {
+      border-color: $dt-green;
+      color: $dt-green;
+    }
+  }
+
+  &__stop-tts {
+    background: transparent;
+    border: 1px solid $dt-red;
+    color: $dt-red;
+    font-family: $dt-font;
+    font-size: 10px;
+    padding: 2px 8px;
+    cursor: pointer;
+  }
+
+  &__input-row {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+  }
+
+  &__input {
+    flex: 1;
+    background: $dt-bg-input;
+    border: 1px solid $dt-blue;
+    color: $dt-white;
+    font-family: $dt-font;
+    font-size: 12px;
+    padding: 8px 12px;
+    resize: none;
+    outline: none;
+
+    &:focus { border-color: $dt-cyan; }
+    &::placeholder { color: $dt-dim; }
+    &:disabled { opacity: 0.5; }
+  }
+
+  &__send {
+    background: $dt-blue;
+    border: none;
+    color: $dt-white;
+    font-family: $dt-font;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    align-self: stretch;
+
+    &:hover:not(:disabled) { background: $dt-cyan; color: $dt-bg; }
+    &:disabled { opacity: 0.4; cursor: not-allowed; }
+  }
+}
+
+// ── Raw View ─────────────────────────────────────────────
+.dt-raw {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  &__header {
+    background: $dt-bg-panel;
+    border-bottom: 1px solid $dt-red;
+    padding: 8px 16px;
+    color: $dt-red;
+    font-size: 11px;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+  }
+
+  &__log {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar-thumb { background: $dt-blue; }
+  }
+
+  &__entry {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px;
+    border-left: 2px solid $dt-blue;
+  }
+
+  &__entry-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  &__entry-content {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: $dt-font;
+    font-size: 11px;
+    color: $dt-white;
+    line-height: 1.5;
+  }
+
+  &__entry--user-orig {
+    border-color: $dt-yellow;
+    .dt-raw__entry-label { color: $dt-yellow; }
+  }
+
+  &__entry--improved {
+    border-color: $dt-green;
+    .dt-raw__entry-label { color: $dt-green; }
+  }
+
+  &__entry--claude {
+    border-color: $dt-cyan;
+    .dt-raw__entry-label { color: $dt-cyan; }
+  }
+
+  &__entry--summary {
+    border-color: $dt-dim;
+    .dt-raw__entry-label { color: $dt-dim; }
+  }
+
+  &__entry--direct-user {
+    border-color: $dt-red;
+    .dt-raw__entry-label { color: $dt-red; }
+  }
+
+  &__entry--direct-claude {
+    border-color: $dt-blue;
+    .dt-raw__entry-label { color: $dt-blue; }
+  }
+
+  &__input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid $dt-red;
+    padding: 10px 16px;
+    flex-shrink: 0;
+  }
+
+  &__prompt {
+    color: $dt-red;
+    font-size: 14px;
+  }
+
+  &__input {
+    flex: 1;
+    background: $dt-bg-input;
+    border: 1px solid $dt-red;
+    color: $dt-white;
+    font-family: $dt-font;
+    font-size: 12px;
+    padding: 8px 12px;
+    outline: none;
+
+    &:focus { border-color: $dt-cyan; }
+    &::placeholder { color: $dt-dim; }
+    &:disabled { opacity: 0.5; }
+  }
+
+  &__send {
+    background: $dt-red;
+    border: none;
+    color: $dt-white;
+    font-family: $dt-font;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    &:hover:not(:disabled) { background: $dt-cyan; color: $dt-bg; }
+    &:disabled { opacity: 0.4; cursor: not-allowed; }
+  }
+}
+
+// ── Error ────────────────────────────────────────────────
+.dt-error {
+  color: $dt-red;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+// ── Animations ───────────────────────────────────────────
+@keyframes dt-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes dt-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

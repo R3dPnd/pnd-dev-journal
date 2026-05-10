@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Git\\\\pnd\\\\pnd-dev-journal\" -Recurse -Depth 2)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(ConvertTo-Json)",
+      "Bash(grep -E \"\\\\.\\(md|json|yaml|yml\\)$\")",
+      "Bash(git *)",
+      "Bash(xargs ls -la)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Git\\\\pnd\\\\pnd-dev-journal\\\\client-app\\\\src\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "PowerShell(npm info *)"
+    ]
+  }
+}
