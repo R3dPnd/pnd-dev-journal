@@ -1,9 +1,12 @@
-.pnd-icon-container{
-    width: fit-content;
-    height: fit-content;
+.pnd-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.pnd-icon{
-    width: fit-content;
-    height: fit-content;
+.pnd-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    image-rendering: pixelated;
 }

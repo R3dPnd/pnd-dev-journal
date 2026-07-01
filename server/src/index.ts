@@ -16,6 +16,10 @@ app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.json());
 app.use('/api/terminal', terminalRoutes);
 
+app.get('/.well-known/appspecific/com.chrome.devtools.json', (_req, res) => {
+  res.json({});
+});
+
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
